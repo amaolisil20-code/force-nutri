@@ -76,7 +76,21 @@ h2 em, .rodape-marca em { color: var(--raio); font-style: italic; }
 .hero { position: relative; overflow: hidden; background: var(--preto); }
 .hero-foto { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; opacity: .55; }
 .hero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.6) 55%, rgba(0,0,0,.25) 100%), linear-gradient(to top, #000 0%, transparent 30%); }
-.hero-raio { position: absolute; z-index: 1; right: -60px; top: -40px; width: 560px; max-width: 60%; fill: var(--raio); opacity: .9; mix-blend-mode: screen; }
+.hero-energia { position: absolute; z-index: 1; right: clamp(0px, 5vw, 110px); top: 50%; height: min(88%, 760px); aspect-ratio: 520 / 640; transform: translateY(-50%); pointer-events: none; animation: flutua 7s ease-in-out infinite; }
+.hero-energia svg { position: relative; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 0 26px rgba(92,225,230,.55)); animation: pulso 3.2s ease-in-out infinite; }
+.energia-brilho { position: absolute; inset: -20% -30%; background: radial-gradient(closest-side, rgba(92,225,230,.28), transparent 70%); }
+.energia-corpo { fill: url(#gRaio); }
+.energia-reflexo { fill: rgba(255,255,255,.22); }
+.energia-eco { fill: none; stroke: url(#gContorno); stroke-width: 2; opacity: .7; }
+.energia-eco-2 { opacity: .35; }
+.energia-linhas line { stroke: var(--raio); stroke-width: 3; stroke-linecap: round; opacity: .55; stroke-dasharray: 70 160; animation: corre 2.4s linear infinite; }
+.energia-linhas line:nth-child(2) { animation-delay: -.8s; }
+.energia-linhas line:nth-child(3) { animation-delay: -1.4s; }
+.energia-linhas line:nth-child(4) { animation-delay: -.3s; }
+.energia-linhas line:nth-child(5) { animation-delay: -1.9s; }
+@keyframes flutua { 50% { transform: translateY(calc(-50% - 14px)); } }
+@keyframes pulso { 50% { filter: drop-shadow(0 0 44px rgba(92,225,230,.85)); } }
+@keyframes corre { from { stroke-dashoffset: 230; } to { stroke-dashoffset: 0; } }
 .hero-conteudo { position: relative; z-index: 2; padding-block: 130px 150px; display: flex; flex-direction: column; gap: 28px; }
 .sobretitulo { margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--raio); }
 .hero h1 { margin: 0; max-width: 820px; font-weight: 900; font-stretch: 115%; font-size: clamp(2.6rem, 9vw, 5.5rem); line-height: .92; letter-spacing: -2px; }
@@ -189,6 +203,7 @@ h2 em, .rodape-marca em { color: var(--raio); font-style: italic; }
   .js-anim .reveal { opacity: 1; transform: none; transition: none; }
   * { transition: none !important; }
   .ticker-trilha { animation: none; }
+  .hero-energia, .hero-energia svg, .energia-linhas line { animation: none; }
 }
 
 @media (max-width: 900px) {
@@ -207,7 +222,7 @@ h2 em, .rodape-marca em { color: var(--raio); font-style: italic; }
 
 @media (max-width: 640px) {
   .hero-conteudo { padding-block: 72px 96px; }
-  .hero-raio { opacity: .4; }
+  .hero-energia { opacity: .4; right: -40px; height: 70%; }
   .hero::before { background: linear-gradient(to top, rgba(0,0,0,.9) 0%, rgba(0,0,0,.55) 100%); }
   .categorias, .vitrine, .sobre, .duvidas { padding-block: 64px; }
   .passos-bloco { padding-block: 64px; }
