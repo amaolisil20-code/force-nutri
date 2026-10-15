@@ -118,7 +118,7 @@ h2 em, .rodape-marca em { color: var(--raio); font-style: italic; }
 .categoria:hover { color: var(--branco); }
 .categoria-rotulo, .categoria-nome, .categoria-link { position: relative; z-index: 1; }
 .categoria-rotulo { font-size: 13px; font-weight: 600; letter-spacing: 2px; color: var(--raio); text-transform: uppercase; }
-.categoria-nome { font-weight: 900; font-size: 48px; line-height: 1; }
+.categoria-nome { font-weight: 900; font-size: clamp(26px, 4.2vw, 48px); line-height: 1; }
 .categoria-link { margin-top: 12px; font-weight: 600; color: var(--raio); transition: transform .2s; }
 .categoria:hover .categoria-link { transform: translateX(6px); }
 
@@ -206,12 +206,16 @@ h2 em, .rodape-marca em { color: var(--raio); font-style: italic; }
   .hero-energia, .hero-energia svg, .energia-linhas line { animation: none; }
 }
 
+@media (max-width: 1024px) {
+  .hero-energia { opacity: .3; right: -30px; height: 74%; }
+}
+
 @media (max-width: 900px) {
   .sobre, .duvidas { grid-template-columns: 1fr; gap: 48px; }
   .sobre-foto { margin-right: 20px; }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 980px) {
   .menu-btn { display: flex; }
   .nav { position: relative; }
   .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 24px 24px; background: rgba(0,0,0,.98); border-bottom: 1px solid #1c1c1c; }
@@ -222,18 +226,19 @@ h2 em, .rodape-marca em { color: var(--raio); font-style: italic; }
 
 @media (max-width: 640px) {
   .hero-conteudo { padding-block: 72px 96px; }
-  .hero-energia { opacity: .4; right: -40px; height: 70%; }
+  .hero-energia { opacity: .22; right: -60px; top: auto; bottom: 4%; height: 62%; transform: none; animation: none; }
   .hero::before { background: linear-gradient(to top, rgba(0,0,0,.9) 0%, rgba(0,0,0,.55) 100%); }
   .categorias, .vitrine, .sobre, .duvidas { padding-block: 64px; }
   .passos-bloco { padding-block: 64px; }
   .categoria { min-height: 320px; padding: 28px; }
-  .categoria-nome { font-size: 40px; }
+  .categoria-nome { font-size: clamp(26px, 8vw, 40px); }
   .ticker { padding-block: 16px; }
   .ticker-grupo span { font-size: 15px; padding-inline: 20px; }
   .acoes .btn { flex: 1 1 100%; }
   .grade-produtos { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .produto-info { padding: 14px; }
   .produto h3 { font-size: 16px; }
+  .produto .btn-pedir { font-size: 13px; padding-inline: 6px; text-align: center; line-height: 1.2; min-height: 48px; }
   .sobre-foto::before { inset: 12px -12px -12px 12px; }
   .cta-conteudo { padding-block: 72px; }
 }
