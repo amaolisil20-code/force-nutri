@@ -36,8 +36,7 @@
 
     const botao = el('a', 'btn-pedir', p.categoria === 'tenis' ? 'Consultar numeração' : 'Pedir no WhatsApp');
     botao.href = linkWhatsApp(`Olá! Tenho interesse em: ${p.nome} (${p.preco})`);
-    botao.target = '_blank';
-    botao.rel = 'noopener';
+    if (botao.href.indexOf('wa.me') !== -1) { botao.target = '_blank'; botao.rel = 'noopener'; }
     info.appendChild(botao);
 
     card.append(foto, info);
@@ -51,7 +50,6 @@
 
   document.querySelectorAll('.js-whatsapp').forEach((a) => {
     a.href = linkWhatsApp();
-    a.target = '_blank';
-    a.rel = 'noopener';
+    if (a.href.indexOf('wa.me') !== -1) { a.target = '_blank'; a.rel = 'noopener'; } else { a.removeAttribute('target'); }
   });
 })();

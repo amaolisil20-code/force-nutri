@@ -53,3 +53,7 @@ No Render: *New → Static Site* → escolher o repo → Build command vazio →
 - [ ] Fotos e preços dos produtos
 - [ ] Endereço, cidade e CNPJ no rodapé
 - [ ] Logo em melhor resolução (PNG/SVG)
+
+## Link de teste
+
+Publicado na Vercel (projeto `force-nutri`): https://force-nutri.vercel.app

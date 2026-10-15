@@ -124,7 +124,11 @@ h2 em, .rodape-marca em { color: var(--raio); font-style: italic; }
 .rodape a { text-decoration: none; }
 
 @media (max-width: 640px) {
-  .nav-links { gap: 16px; font-size: 14px; }
-  .hero-conteudo { padding-block: 72px 96px; }
-  .categoria { min-height: 300px; }
+  .nav { justify-content: center; }
+  .nav-links { gap: 14px; font-size: 14px; justify-content: center; }
+  .hero-conteudo { padding-block: 64px 88px; }
+  .hero-raio { opacity: .35; }
+  .categoria { min-height: 280px; }
+  .faixa-itens { font-size: 15px; justify-content: center; }
+  .acoes .btn { flex: 1 1 100%; }
 }
