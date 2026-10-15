@@ -28,7 +28,7 @@ a { color: var(--raio); }
 a:hover { color: var(--raio-claro); }
 :focus-visible { outline: 2px solid var(--raio); outline-offset: 3px; }
 
-.container { max-width: 1280px; margin: 0 auto; padding-inline: 24px; }
+.container { max-width: 1680px; margin: 0 auto; padding-inline: clamp(24px, 4vw, 72px); }
 
 h1, h2, h3, .marca, .btn, .faixa, .categoria-nome, .preco, .rodape-marca, .passo-num {
   font-family: var(--fonte-display);
@@ -113,7 +113,7 @@ h2 em, .rodape-marca em { color: var(--raio); font-style: italic; }
 .vitrine-topo { display: flex; flex-direction: column; gap: 12px; }
 .vitrine-sub { margin: 0; max-width: 560px; color: var(--cinza); font-size: 1.1rem; }
 .faixa-escura { background: #0a0a0a; border-block: 1px solid #1c1c1c; }
-.grade-produtos { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+.grade-produtos { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
 .produto { display: flex; flex-direction: column; background: var(--grafite); border: 1px solid var(--borda); transition: border-color .2s, transform .25s; }
 .produto:hover { border-color: var(--raio); transform: translateY(-4px); }
 .produto-foto { position: relative; aspect-ratio: 1 / 1; background: var(--grafite-2); overflow: hidden; }
