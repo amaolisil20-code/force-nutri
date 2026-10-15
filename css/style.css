@@ -86,9 +86,14 @@ h2 em, .rodape-marca em { color: var(--raio); font-style: italic; }
 .hero-selos li { display: flex; align-items: center; gap: 8px; }
 .hero-selos li::before { content: ""; width: 8px; height: 8px; background: var(--raio); transform: skewX(-20deg); }
 
-/* Faixa */
-.faixa { position: relative; z-index: 3; background: var(--raio); color: var(--preto); transform: skewY(-2deg); margin-bottom: 40px; }
-.faixa-itens { transform: skewY(2deg); padding-block: 22px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-weight: 900; font-size: 20px; }
+/* Faixa (ticker) */
+.ticker { position: relative; z-index: 3; overflow: hidden; background: #060606; border-block: 1px solid #1f3a3b; padding-block: 20px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.ticker-trilha { display: flex; width: max-content; animation: ticker 40s linear infinite; }
+.ticker:hover .ticker-trilha { animation-play-state: paused; }
+.ticker-grupo { display: flex; align-items: center; flex: none; }
+.ticker-grupo span { padding-inline: 28px; font-family: var(--fonte-display); font-style: italic; font-weight: 800; font-size: 18px; letter-spacing: 3px; text-transform: uppercase; color: #e8e8e8; white-space: nowrap; }
+.ticker-grupo svg { flex: none; width: 9px; height: 13px; fill: var(--raio); }
+@keyframes ticker { to { transform: translateX(-25%); } }
 
 /* Categorias */
 .categorias { padding-block: 80px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
@@ -183,6 +188,7 @@ h2 em, .rodape-marca em { color: var(--raio); font-style: italic; }
   html { scroll-behavior: auto; }
   .js-anim .reveal { opacity: 1; transform: none; transition: none; }
   * { transition: none !important; }
+  .ticker-trilha { animation: none; }
 }
 
 @media (max-width: 900px) {
@@ -207,7 +213,8 @@ h2 em, .rodape-marca em { color: var(--raio); font-style: italic; }
   .passos-bloco { padding-block: 64px; }
   .categoria { min-height: 320px; padding: 28px; }
   .categoria-nome { font-size: 40px; }
-  .faixa-itens { font-size: 15px; justify-content: center; }
+  .ticker { padding-block: 16px; }
+  .ticker-grupo span { font-size: 15px; padding-inline: 20px; }
   .acoes .btn { flex: 1 1 100%; }
   .grade-produtos { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .produto-info { padding: 14px; }
