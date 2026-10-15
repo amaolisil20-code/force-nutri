@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Force Nutri — Suplementos e Tênis</title>
+  <meta name="description" content="Force Nutri: suplementos originais e tênis de performance. Atendimento direto pelo WhatsApp.">
+  <link rel="icon" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <nav class="container nav">
+      <a href="#inicio" class="marca" aria-label="Force Nutri — início">
+        <span>FORCE</span>
+        <svg width="22" height="30" viewBox="0 0 22 30" aria-hidden="true"><path d="M14 0 L2 17 H10 L7 30 L20 11 H12 Z" fill="currentColor"/></svg>
+        <span>NUTRI</span>
+      </a>
+      <div class="nav-links">
+        <a href="#suplementos">Suplementos</a>
+        <a href="#tenis">Tênis</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato" class="btn btn-raio btn-sm js-whatsapp">Fale no WhatsApp</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <svg class="hero-raio" viewBox="0 0 400 600" aria-hidden="true"><path d="M260 0 L40 340 H190 L130 600 L380 220 H230 Z"/></svg>
+      <div class="container hero-conteudo">
+        <p class="sobretitulo">Suplementos · Tênis · Performance</p>
+        <h1>Energia pra treinar. Pegada pra correr.</h1>
+        <p class="hero-texto">[Frase curta sobre a Force Nutri — ex.: suplementos originais e tênis de performance com atendimento direto pelo WhatsApp.]</p>
+        <div class="acoes">
+          <a href="#suplementos" class="btn btn-raio">Ver suplementos</a>
+          <a href="#tenis" class="btn btn-contorno">Ver tênis</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="faixa" aria-hidden="true">
+      <div class="container faixa-itens">
+        <span>Whey</span><span>Creatina</span><span>Pré-treino</span><span>Vitaminas</span><span>Running</span><span>Treino</span>
+      </div>
+    </div>
+
+    <section class="container categorias">
+      <a href="#suplementos" class="categoria">
+        <img src="img/categoria-suplementos.jpg" alt="" onerror="this.remove()">
+        <span class="categoria-rotulo">Categoria</span>
+        <span class="categoria-nome">Suplementos</span>
+      </a>
+      <a href="#tenis" class="categoria">
+        <img src="img/categoria-tenis.jpg" alt="" onerror="this.remove()">
+        <span class="categoria-rotulo">Categoria</span>
+        <span class="categoria-nome">Tênis</span>
+      </a>
+    </section>
+
+    <section id="suplementos" class="container vitrine">
+      <div class="vitrine-topo">
+        <h2>Destaques <em>suplementos</em></h2>
+      </div>
+      <div class="grade-produtos" data-categoria="suplementos"></div>
+    </section>
+
+    <section id="tenis" class="faixa-escura">
+      <div class="container vitrine">
+        <div class="vitrine-topo">
+          <h2>Destaques <em>tênis</em></h2>
+        </div>
+        <div class="grade-produtos" data-categoria="tenis"></div>
+      </div>
+    </section>
+
+    <section id="sobre" class="container diferenciais">
+      <h2>Por que comprar na <em>Force</em></h2>
+      <div class="grade-diferenciais">
+        <div class="diferencial">
+          <h3>Produtos originais</h3>
+          <p>[Texto curto sobre procedência e marcas trabalhadas.]</p>
+        </div>
+        <div class="diferencial">
+          <h3>Atendimento direto</h3>
+          <p>[Texto curto sobre tirar dúvidas e indicar o produto certo pelo WhatsApp.]</p>
+        </div>
+        <div class="diferencial">
+          <h3>Entrega</h3>
+          <p>[Cidades atendidas, retirada na loja e prazos.]</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="cta">
+      <svg class="cta-raio" viewBox="0 0 400 600" aria-hidden="true"><path d="M260 0 L40 340 H190 L130 600 L380 220 H230 Z"/></svg>
+      <div class="container cta-conteudo">
+        <div>
+          <h2>Bora pro próximo nível?</h2>
+          <p>Chama a gente e monte seu combo de suplementos + tênis.</p>
+        </div>
+        <div class="acoes">
+          <a href="#" class="btn btn-preto js-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://www.instagram.com/forcenutrisuplementoss/" class="btn btn-contorno-preto" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container rodape">
+    <span class="rodape-marca">FORCE <em>NUTRI</em></span>
+    <span>[Endereço da loja] · [Cidade/UF] · [CNPJ]</span>
+    <a href="https://www.instagram.com/forcenutrisuplementoss/" target="_blank" rel="noopener">@forcenutrisuplementoss</a>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/produtos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
