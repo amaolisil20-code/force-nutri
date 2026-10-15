@@ -24,10 +24,13 @@
         <svg width="22" height="30" viewBox="0 0 22 30" aria-hidden="true"><path d="M14 0 L2 17 H10 L7 30 L20 11 H12 Z" fill="currentColor"/></svg>
         <span>NUTRI</span>
       </a>
-      <div class="nav-links">
+      <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="menu">
         <a href="#suplementos">Suplementos</a>
         <a href="#tenis">Tênis</a>
         <a href="#sobre">Sobre</a>
+        <a href="#como-comprar">Como comprar</a>
+        <a href="#duvidas">Dúvidas</a>
         <a href="#contato" class="btn btn-raio btn-sm js-whatsapp">Fale no WhatsApp</a>
       </div>
     </nav>
@@ -35,15 +38,21 @@
 
   <main>
     <section id="inicio" class="hero">
+      <img class="hero-foto" src="img/fotos/hero.jpg" alt="" fetchpriority="high">
       <svg class="hero-raio" viewBox="0 0 400 600" aria-hidden="true"><path d="M260 0 L40 340 H190 L130 600 L380 220 H230 Z"/></svg>
       <div class="container hero-conteudo">
         <p class="sobretitulo">Suplementos · Tênis · Performance</p>
-        <h1>Energia pra treinar. Pegada pra correr.</h1>
-        <p class="hero-texto">[Frase curta sobre a Force Nutri — ex.: suplementos originais e tênis de performance com atendimento direto pelo WhatsApp.]</p>
+        <h1>Energia pra treinar. <span>Pegada pra correr.</span></h1>
+        <p class="hero-texto">Suplementos originais e tênis de performance, com atendimento direto pelo WhatsApp. Você fala com a gente, a gente indica o certo pro seu objetivo.</p>
         <div class="acoes">
           <a href="#suplementos" class="btn btn-raio">Ver suplementos</a>
           <a href="#tenis" class="btn btn-contorno">Ver tênis</a>
         </div>
+        <ul class="hero-selos">
+          <li>Produtos originais</li>
+          <li>Atendimento rápido</li>
+          <li>Pedido pelo WhatsApp</li>
+        </ul>
       </div>
     </section>
 
@@ -53,54 +62,117 @@
       </div>
     </div>
 
-    <section class="container categorias">
+    <section class="container categorias reveal">
       <a href="#suplementos" class="categoria">
-        <img src="img/categoria-suplementos.jpg" alt="" onerror="this.remove()">
+        <img src="img/fotos/cat-suplementos.jpg" alt="Shake de whey protein ao lado do suplemento" loading="lazy">
         <span class="categoria-rotulo">Categoria</span>
         <span class="categoria-nome">Suplementos</span>
+        <span class="categoria-link">Ver produtos →</span>
       </a>
       <a href="#tenis" class="categoria">
-        <img src="img/categoria-tenis.jpg" alt="" onerror="this.remove()">
+        <img src="img/fotos/cat-tenis.jpg" alt="Tênis esportivo em movimento" loading="lazy">
         <span class="categoria-rotulo">Categoria</span>
         <span class="categoria-nome">Tênis</span>
+        <span class="categoria-link">Ver produtos →</span>
       </a>
     </section>
 
-    <section id="suplementos" class="container vitrine">
+    <section id="suplementos" class="container vitrine reveal">
       <div class="vitrine-topo">
+        <p class="sobretitulo">Nutrição esportiva</p>
         <h2>Destaques <em>suplementos</em></h2>
+        <p class="vitrine-sub">Os mais procurados pra ganhar massa, ter mais energia e render mais no treino.</p>
       </div>
       <div class="grade-produtos" data-categoria="suplementos"></div>
     </section>
 
     <section id="tenis" class="faixa-escura">
-      <div class="container vitrine">
+      <div class="container vitrine reveal">
         <div class="vitrine-topo">
+          <p class="sobretitulo">Calçados esportivos</p>
           <h2>Destaques <em>tênis</em></h2>
+          <p class="vitrine-sub">Conforto e amortecimento pra corrida, treino e o dia a dia.</p>
         </div>
         <div class="grade-produtos" data-categoria="tenis"></div>
       </div>
     </section>
 
-    <section id="sobre" class="container diferenciais">
-      <h2>Por que comprar na <em>Force</em></h2>
-      <div class="grade-diferenciais">
-        <div class="diferencial">
-          <h3>Produtos originais</h3>
-          <p>[Texto curto sobre procedência e marcas trabalhadas.]</p>
-        </div>
-        <div class="diferencial">
-          <h3>Atendimento direto</h3>
-          <p>[Texto curto sobre tirar dúvidas e indicar o produto certo pelo WhatsApp.]</p>
-        </div>
-        <div class="diferencial">
-          <h3>Entrega</h3>
-          <p>[Cidades atendidas, retirada na loja e prazos.]</p>
+    <section id="sobre" class="container sobre reveal">
+      <div class="sobre-foto">
+        <img src="img/fotos/sobre.jpg" alt="Academia com halteres organizados em fileira" loading="lazy">
+        <div class="sobre-selo"><strong>100%</strong><span>originais</span></div>
+      </div>
+      <div class="sobre-texto">
+        <p class="sobretitulo">Por que a Force</p>
+        <h2>Por que comprar na <em>Force</em></h2>
+        <div class="grade-diferenciais">
+          <div class="diferencial">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5l8-3zm-1 13l6-6-1.4-1.4L11 12.2 8.4 9.6 7 11l4 4z"/></svg>
+            <div>
+              <h3>Produtos originais</h3>
+              <p>Trabalhamos só com marcas confiáveis e produtos de procedência. Nada de risco com o que você leva pro corpo.</p>
+            </div>
+          </div>
+          <div class="diferencial">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2zM7 9h10v2H7V9zm6 5H7v-2h6v2zm4-6H7V6h10v2z"/></svg>
+            <div>
+              <h3>Atendimento direto</h3>
+              <p>Tire dúvidas e receba indicação do produto certo pro seu objetivo, de forma rápida, pelo WhatsApp.</p>
+            </div>
+          </div>
+          <div class="diferencial">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h11v9h2.5l2.5-3h2l2 3v5h-2a2.5 2.5 0 01-5 0H9.5a2.5 2.5 0 01-5 0H3V4zm4 12a1 1 0 100 2 1 1 0 000-2zm10 0a1 1 0 100 2 1 1 0 000-2z"/></svg>
+            <div>
+              <h3>Entrega e retirada</h3>
+              <p>Combine entrega ou retirada direto com a gente e confirme prazos e cidades atendidas no atendimento.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
+    <section id="como-comprar" class="faixa-escura">
+      <div class="container passos-bloco reveal">
+        <div class="passos-topo">
+          <p class="sobretitulo">Simples e rápido</p>
+          <h2>Como <em>comprar</em></h2>
+        </div>
+        <ol class="passos">
+          <li><span class="passo-num">01</span><h3>Escolha</h3><p>Veja os destaques e escolha o produto que combina com seu treino.</p></li>
+          <li><span class="passo-num">02</span><h3>Chame no WhatsApp</h3><p>Um clique abre a conversa com o produto já na mensagem.</p></li>
+          <li><span class="passo-num">03</span><h3>Receba</h3><p>Combine pagamento e entrega ou retirada, e pronto.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="duvidas" class="container duvidas reveal">
+      <h2>Dúvidas <em>frequentes</em></h2>
+      <div class="faq">
+        <details>
+          <summary>Os produtos são originais?</summary>
+          <p>Sim. Trabalhamos com produtos de procedência e marcas confiáveis, tanto nos suplementos quanto nos tênis.</p>
+        </details>
+        <details>
+          <summary>Como faço pra comprar?</summary>
+          <p>É só clicar em “Pedir no WhatsApp” no produto desejado. A conversa abre com o nome do produto e a gente continua por lá.</p>
+        </details>
+        <details>
+          <summary>Não sei qual suplemento escolher. E agora?</summary>
+          <p>Chame a gente no WhatsApp e conte seu objetivo (ganho de massa, energia, emagrecimento). Indicamos a melhor opção.</p>
+        </details>
+        <details>
+          <summary>Como saber o número certo do tênis?</summary>
+          <p>Clique em “Consultar numeração” e informe o modelo e o número que você calça. Confirmamos a disponibilidade e ajudamos com o tamanho.</p>
+        </details>
+        <details>
+          <summary>Vocês entregam?</summary>
+          <p>Combinamos entrega ou retirada no atendimento. Fale com a gente pra confirmar prazos e regiões atendidas.</p>
+        </details>
+      </div>
+    </section>
+
     <section id="contato" class="cta">
+      <img class="cta-foto" src="img/fotos/cta.jpg" alt="" loading="lazy">
       <svg class="cta-raio" viewBox="0 0 400 600" aria-hidden="true"><path d="M260 0 L40 340 H190 L130 600 L380 220 H230 Z"/></svg>
       <div class="container cta-conteudo">
         <div>
@@ -117,9 +189,13 @@
 
   <footer class="container rodape">
     <span class="rodape-marca">FORCE <em>NUTRI</em></span>
-    <span>[Endereço da loja] · [Cidade/UF] · [CNPJ]</span>
     <a href="https://www.instagram.com/forcenutrisuplementoss/" target="_blank" rel="noopener">@forcenutrisuplementoss</a>
+    <span class="rodape-nota">Fotos ilustrativas: <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a></span>
   </footer>
+
+  <a href="#contato" class="whats-flutuante js-whatsapp" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 2a8 8 0 11-4.2 14.800l-.3-.2-2.600.7.7-2.500-.2-.3A8 8 0 0112 4zm-2.800 4c-.2 0-.5.1-.7.4-.3.300-1 1-1 2.400s1 2.800 1.200 3c.1.200 2 3.100 4.900 4.300 2.400 1 2.900.8 3.400.7.500-.1 1.700-.7 1.900-1.400.2-.7.2-1.200.2-1.400-.1-.1-.3-.2-.7-.4l-1.800-.9c-.3-.1-.5-.1-.7.100l-.8 1c-.1.200-.3.200-.6.100-.3-.1-1.200-.4-2.300-1.400-.8-.8-1.400-1.700-1.500-2-.2-.3 0-.4.100-.6l.4-.5.300-.4v-.5l-.8-2c-.2-.5-.4-.5-.6-.5h-.5z"/></svg>
+  </a>
 
   <script src="js/config.js"></script>
   <script src="js/produtos.js"></script>

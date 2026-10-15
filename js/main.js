@@ -25,17 +25,15 @@
       img.alt = p.nome;
       img.loading = 'lazy';
       foto.appendChild(img);
-    } else {
-      foto.textContent = 'Foto do produto';
     }
+    foto.appendChild(el('span', 'produto-tag', p.tag));
 
     const info = el('div', 'produto-info');
-    info.appendChild(el('span', 'produto-tag', p.tag));
     info.appendChild(el('h3', '', p.nome));
-    info.appendChild(el('p', 'preco', p.preco));
+    info.appendChild(el('p', p.preco ? 'preco' : 'preco preco-consulta', p.preco || 'Consulte o valor'));
 
     const botao = el('a', 'btn-pedir', p.categoria === 'tenis' ? 'Consultar numeração' : 'Pedir no WhatsApp');
-    botao.href = linkWhatsApp(`Olá! Tenho interesse em: ${p.nome} (${p.preco})`);
+    botao.href = linkWhatsApp(`Olá! Tenho interesse em: ${p.nome}${p.preco ? ` (${p.preco})` : ''}`);
     if (botao.href.indexOf('wa.me') !== -1) { botao.target = '_blank'; botao.rel = 'noopener'; }
     info.appendChild(botao);
 
@@ -52,4 +50,26 @@
     a.href = linkWhatsApp();
     if (a.href.indexOf('wa.me') !== -1) { a.target = '_blank'; a.rel = 'noopener'; } else { a.removeAttribute('target'); }
   });
+
+  // Menu mobile
+  const btn = document.querySelector('.menu-btn');
+  const menu = document.getElementById('menu');
+  if (btn && menu) {
+    const fechar = () => { menu.classList.remove('aberto'); btn.setAttribute('aria-expanded', 'false'); };
+    btn.addEventListener('click', () => {
+      const aberto = menu.classList.toggle('aberto');
+      btn.setAttribute('aria-expanded', String(aberto));
+    });
+    menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', fechar));
+  }
+
+  // Animação de entrada ao rolar
+  const itens = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    document.documentElement.classList.add('js-anim');
+    const io = new IntersectionObserver((entradas) => {
+      entradas.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('visivel'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    itens.forEach((i) => io.observe(i));
+  }
 })();

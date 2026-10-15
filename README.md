@@ -13,8 +13,7 @@ js/main.js                  monta os cards e os links do WhatsApp
 img/logo.png                logo
 img/produtos/suplementos/   fotos dos suplementos
 img/produtos/tenis/         fotos dos tênis
-img/categoria-suplementos.jpg   (opcional) foto do card de categoria
-img/categoria-tenis.jpg         (opcional) foto do card de categoria
+img/fotos/                  fotos ilustrativas (Unsplash) — troque pelas suas quando tiver
 ```
 
 ## Como adicionar as fotos dos produtos
@@ -48,10 +47,10 @@ No Render: *New → Static Site* → escolher o repo → Build command vazio →
 
 ## Pendências
 
-- [ ] Textos marcados com `[colchetes]`
+- [ ] Nomes e preços reais em `js/produtos.js` (hoje: "Consulte o valor")
 - [ ] Número do WhatsApp
 - [ ] Fotos e preços dos produtos
-- [ ] Endereço, cidade e CNPJ no rodapé
+- [ ] (Opcional) endereço, cidade e CNPJ no rodapé
 - [ ] Logo em melhor resolução (PNG/SVG)
 
 ## Link de teste
